@@ -1,4 +1,5 @@
 var path    = require('path');
+var assert  = require('assert');
 var helpers = require('yeoman-generator').test;
 
 describe('generator-component', function() {
@@ -15,12 +16,17 @@ describe('generator-component', function() {
     }.bind(this));
   });
 
+  it('can be imported', function() {
+    var importApp = require('../app');
+    assert(importApp !== undefined);
+  });
+
   it('creates basic files', function(done) {
     var expected = [
       '.gitattributes',
       '.gitignore',
       'HISTORY.md',
-      'component.json',
+      ['component.json', /"name": "temp"/],
       'index.js',
       ['package.json', /"name": "temp"/],
       'README.md'
@@ -42,7 +48,7 @@ describe('generator-component', function() {
       '.gitattributes',
       '.gitignore',
       'HISTORY.md',
-      'component.json',
+      ['component.json', /"name": "temp"/],
       'index.js',
       ['package.json', /"name": "temp"/],
       'README.md'
