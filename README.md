@@ -10,7 +10,3 @@ An opinionated Yeoman generator for [components](https://github.com/component).
 - Make sure you have [yo](https://github.com/yeoman/yo) installed: `npm install -g yo`
 - Install the generator **locally**: `npm install generator-component`
 - Run: `yo component`
-
-## License
-
-MIT
