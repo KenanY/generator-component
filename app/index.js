@@ -52,7 +52,7 @@ ComponentGenerator.prototype.test = function test() {
   this.mkdir('test');
 };
 
-ComponentGenerator.prototype.bootstrapImg = function bootstrapImg() {
+ComponentGenerator.prototype.editorConfig = function editorConfig() {
   if (this.editorConfig) {
     this.copy('editorconfig', '.editorconfig');
   }
