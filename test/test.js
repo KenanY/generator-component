@@ -36,6 +36,7 @@ describe('generator-component', function() {
       'editorConfig': 'N'
     });
 
+    this.app.options['skip-install'] = true;
     this.app.run({}, function() {
       helpers.assertFiles(expected);
       done();
@@ -58,6 +59,7 @@ describe('generator-component', function() {
       'editorConfig': 'Y'
     });
 
+    this.app.options['skip-install'] = true;
     this.app.run({}, function() {
       helpers.assertFiles(expected);
       done();

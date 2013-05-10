@@ -6,7 +6,11 @@ var ComponentGenerator = module.exports = function ComponentGenerator(args, opti
   yeoman.generators.Base.apply(this, arguments);
 
   this.on('end', function() {
-    this.installDependencies({bower: false, npm: true, skipInstall: false});
+    if (options['skip-install']) {
+      this.installDependencies({skipInstall: true});
+    } else {
+      this.installDependencies({bower: false, npm: true, skipInstall: false});
+    }
   });
 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
