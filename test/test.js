@@ -28,7 +28,6 @@ describe('generator-component', function() {
       'HISTORY.md',
       ['component.json', /"name": "temp"/],
       'index.js',
-      ['package.json', /"name": "temp"/],
       'README.md'
     ];
 
@@ -36,7 +35,8 @@ describe('generator-component', function() {
       'componentFullName': 'tester',
       'componentDescription': 'Component for testing.',
       'testScaffolding': 'N',
-      'editorConfig': 'N'
+      'editorConfig': 'N',
+      'npmPublishing': 'N'
     });
 
     this.app.options['skip-install'] = true;
@@ -63,7 +63,8 @@ describe('generator-component', function() {
       'componentFullName': 'tester',
       'componentDescription': 'Component for testing.',
       'testScaffolding': 'Y',
-      'editorConfig': 'Y'
+      'editorConfig': 'Y',
+      'npmPublishing': 'Y'
     });
 
     this.app.options['skip-install'] = true;

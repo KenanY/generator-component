@@ -50,13 +50,19 @@ ComponentGenerator.prototype.askFor = function askFor() {
     name: 'testScaffolding',
     message: 'Would you like tests?',
     default: 'Y/n',
-    warning: 'Yes: A folder for tests will be created.'
+    warning: 'Yes: A package.json file and a folder for tests will be created.'
   },
   {
     name: 'editorConfig',
     message: 'Would you like an .editorconfig file?',
     default: 'Y/n',
     warning: 'Yes: An .editorconfig will will be created.'
+  },
+  {
+    name: 'npmPublishing',
+    message: 'Would you like to publish this module to npm?',
+    default: 'Y/n',
+    warning: 'Yes: A package.json will be created.'
   }];
 
   this.prompt(prompts, function(err, props) {
@@ -68,6 +74,7 @@ ComponentGenerator.prototype.askFor = function askFor() {
     this.componentDescription = props.componentDescription;
     this.testScaffolding = (/y/i).test(props.testScaffolding);
     this.editorConfig = (/y/i).test(props.editorConfig);
+    this.npmPublishing = (/y/i).test(props.npmPublishing);
 
     cb();
   }.bind(this));
@@ -95,7 +102,10 @@ ComponentGenerator.prototype.markdownFiles = function markdownFiles() {
 
 ComponentGenerator.prototype.jsonFiles = function jsonFiles() {
   this.template('_component.json', 'component.json');
-  this.template('_package.json', 'package.json');
+
+  if (this.npmPublishing || this.testScaffolding) {
+    this.template('_package.json', 'package.json');
+  }
 };
 
 ComponentGenerator.prototype.app = function app() {
