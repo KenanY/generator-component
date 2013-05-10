@@ -35,13 +35,33 @@ $ yo component
     <th>Optional?</th>
   </tr>
   <tr>
+    <td><code>.editorconfig</code></td>
+    <td>Define and maintain consistent coding styles between editors.</td>
+    <td>✔</td>
+  </tr>
+  <tr>
+    <td><code>.gitattributes</code></td>
+    <td>Automatic end-of-line normalization by git.</td>
+    <td>✘</td>
+  </tr>
+  <tr>
+    <td><code>.gitignore</code></td>
+    <td>List of files that git should ignore.</td>
+    <td>✘</td>
+  </tr>
+  <tr>
     <td><code>component.json</code></td>
     <td>Absolutely necessary.</td>
     <td>✘</td>
   </tr>
   <tr>
     <td><code>HISTORY.md</code></td>
-    <td>Basically your changelog.</td>
+    <td>Your changelog.</td>
+    <td>✘</td>
+  </tr>
+  <tr>
+    <td><code>index.js</code></td>
+    <td>Your component's JavaScript source code.</td>
     <td>✘</td>
   </tr>
   <tr>
