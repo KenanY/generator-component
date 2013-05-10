@@ -21,11 +21,31 @@ describe('generator-component', function() {
       '.gitattributes',
       'component.json',
       'index.js',
-      'package.json'
+      ['package.json', /"name": "temp"/]
     ];
 
     helpers.mockPrompt(this.app, {
       'editorConfig': 'N'
+    });
+
+    this.app.run({}, function() {
+      helpers.assertFiles(expected);
+      done();
+    });
+  });
+
+  it('creates extra files', function(done) {
+    var expected = [
+      '.editorconfig',
+      '.gitignore',
+      '.gitattributes',
+      'component.json',
+      'index.js',
+      ['package.json', /"name": "temp"/]
+    ];
+
+    helpers.mockPrompt(this.app, {
+      'editorConfig': 'Y'
     });
 
     this.app.run({}, function() {

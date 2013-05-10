@@ -33,7 +33,7 @@ ComponentGenerator.prototype.askFor = function askFor() {
   var prompts = [{
     name: 'editorConfig',
     message: 'Would you like an .editorconfig file?',
-    default: 'Y/n',
+    default: true,
     warning: 'Yes: An .editorconfig will will be created.'
   }];
 
