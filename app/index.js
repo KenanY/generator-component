@@ -35,9 +35,27 @@ ComponentGenerator.prototype.askFor = function askFor() {
   console.log(welcome);
 
   var prompts = [{
+    name: 'componentFullName',
+    message: 'What would you like to call this component?',
+    default: 'myComponent',
+    warning: 'You can change the component name.'
+  },
+  {
+    name: 'componentDescription',
+    message: 'How would you like to describe this component?',
+    default: 'My component',
+    warning: 'You can change the component description.'
+  },
+  {
+    name: 'testScaffolding',
+    message: 'Would you like tests?',
+    default: 'Y/n',
+    warning: 'Yes: A folder for tests will be created.'
+  },
+  {
     name: 'editorConfig',
     message: 'Would you like an .editorconfig file?',
-    default: true,
+    default: 'Y/n',
     warning: 'Yes: An .editorconfig will will be created.'
   }];
 
@@ -46,41 +64,38 @@ ComponentGenerator.prototype.askFor = function askFor() {
       return this.emit('error', err);
     }
 
+    this.componentFullName = props.componentFullName;
+    this.componentDescription = props.componentDescription;
+    this.testScaffolding = (/y/i).test(props.testScaffolding);
     this.editorConfig = (/y/i).test(props.editorConfig);
 
     cb();
   }.bind(this));
 };
 
-ComponentGenerator.prototype.test = function test() {
-  this.mkdir('test');
+ComponentGenerator.prototype.testFolder = function testFolder() {
+  if (this.testScaffolding) {
+    this.directory('test', 'test');
+  }
 };
 
-ComponentGenerator.prototype.editor = function editor() {
+ComponentGenerator.prototype.dotfiles = function dotfiles() {
+  this.copy('gitignore', '.gitignore');
+  this.copy('gitattributes', '.gitattributes');
+
   if (this.editorConfig) {
     this.copy('editorconfig', '.editorconfig');
   }
 };
 
-ComponentGenerator.prototype.git = function git() {
-  this.copy('gitignore', '.gitignore');
-  this.copy('gitattributes', '.gitattributes');
-};
-
-ComponentGenerator.prototype.history = function history() {
+ComponentGenerator.prototype.markdownFiles = function markdownFiles() {
   this.copy('HISTORY.md', 'HISTORY.md');
-};
-
-ComponentGenerator.prototype.packageJSON = function packageJSON() {
-  this.template('_package.json', 'package.json');
-};
-
-ComponentGenerator.prototype.componentJSON = function componentJSON() {
-  this.template('_component.json', 'component.json');
-};
-
-ComponentGenerator.prototype.readme = function readme() {
   this.template('README.md', 'README.md');
+};
+
+ComponentGenerator.prototype.jsonFiles = function jsonFiles() {
+  this.template('_component.json', 'component.json');
+  this.template('_package.json', 'package.json');
 };
 
 ComponentGenerator.prototype.app = function app() {

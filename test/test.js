@@ -33,6 +33,9 @@ describe('generator-component', function() {
     ];
 
     helpers.mockPrompt(this.app, {
+      'componentFullName': 'tester',
+      'componentDescription': 'Component for testing.',
+      'testScaffolding': 'N',
       'editorConfig': 'N'
     });
 
@@ -45,6 +48,7 @@ describe('generator-component', function() {
 
   it('creates extra files', function(done) {
     var expected = [
+      'test/index.js',
       '.editorconfig',
       '.gitattributes',
       '.gitignore',
@@ -56,6 +60,9 @@ describe('generator-component', function() {
     ];
 
     helpers.mockPrompt(this.app, {
+      'componentFullName': 'tester',
+      'componentDescription': 'Component for testing.',
+      'testScaffolding': 'Y',
       'editorConfig': 'Y'
     });
 
