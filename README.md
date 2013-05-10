@@ -19,7 +19,7 @@ An opinionated Yeoman generator for [components](https://github.com/component).
     <th>Effect</th>
   </tr>
   <tr>
-    <td><code>--skip-install`</code></td>
+    <td><code>--skip-install</code></td>
     <td>Skips the automatic execution of `npm install` after scaffolding has finished.</td>
   </tr>
 </table>
