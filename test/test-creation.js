@@ -17,8 +17,9 @@ describe('generator-component', function() {
 
   it('creates basic files', function(done) {
     var expected = [
-      '.gitignore',
       '.gitattributes',
+      '.gitignore',
+      'HISTORY.md',
       'component.json',
       'index.js',
       ['package.json', /"name": "temp"/],
@@ -38,8 +39,9 @@ describe('generator-component', function() {
   it('creates extra files', function(done) {
     var expected = [
       '.editorconfig',
-      '.gitignore',
       '.gitattributes',
+      '.gitignore',
+      'HISTORY.md',
       'component.json',
       'index.js',
       ['package.json', /"name": "temp"/],
