@@ -7,9 +7,11 @@ An opinionated Yeoman generator for [components](https://github.com/component).
 
 ## Getting started
 
-- Make sure you have [yo](https://github.com/yeoman/yo) installed: `npm install -g yo`
-- Install the generator **locally**: `npm install generator-component`
-- Run: `yo component`
+``` bash
+$ npm install yo -g
+$ npm install generator-component
+$ yo component
+```
 
 ## Options
 
