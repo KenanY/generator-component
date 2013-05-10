@@ -75,6 +75,10 @@ ComponentGenerator.prototype.componentJSON = function componentJSON() {
   this.template('_component.json', 'component.json');
 };
 
+ComponentGenerator.prototype.readme = function readme() {
+  this.template('README.md', 'README.md');
+};
+
 ComponentGenerator.prototype.app = function app() {
   this.template('index.js', 'index.js');
 };

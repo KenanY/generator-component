@@ -21,7 +21,8 @@ describe('generator-component', function() {
       '.gitattributes',
       'component.json',
       'index.js',
-      ['package.json', /"name": "temp"/]
+      ['package.json', /"name": "temp"/],
+      'README.md'
     ];
 
     helpers.mockPrompt(this.app, {
@@ -41,7 +42,8 @@ describe('generator-component', function() {
       '.gitattributes',
       'component.json',
       'index.js',
-      ['package.json', /"name": "temp"/]
+      ['package.json', /"name": "temp"/],
+      'README.md'
     ];
 
     helpers.mockPrompt(this.app, {
