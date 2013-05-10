@@ -22,7 +22,7 @@ $ yo component
   </tr>
   <tr>
     <td><code>--skip-install</code></td>
-    <td>Skips the automatic execution of `npm install` after scaffolding has finished.</td>
+    <td>Skips the automatic execution of <code>npm install</code> after scaffolding has finished.</td>
   </tr>
 </table>
 
