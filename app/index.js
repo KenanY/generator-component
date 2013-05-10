@@ -52,7 +52,7 @@ ComponentGenerator.prototype.test = function test() {
   this.mkdir('test');
 };
 
-ComponentGenerator.prototype.editorConfig = function editorConfig() {
+ComponentGenerator.prototype.editor = function editor() {
   if (this.editorConfig) {
     this.copy('editorconfig', '.editorconfig');
   }
