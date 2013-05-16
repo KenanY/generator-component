@@ -52,6 +52,7 @@ describe('generator-component', function() {
       '.editorconfig',
       '.gitattributes',
       '.gitignore',
+      '.travis.yml',
       'HISTORY.md',
       ['component.json', /"name": "temp"/],
       'index.js',

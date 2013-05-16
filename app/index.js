@@ -93,6 +93,9 @@ ComponentGenerator.prototype.dotfiles = function dotfiles() {
   if (this.editorConfig) {
     this.copy('editorconfig', '.editorconfig');
   }
+  if (this.testScaffolding) {
+    this.copy('travis.yml', '.travis.yml');
+  }
 };
 
 ComponentGenerator.prototype.markdownFiles = function markdownFiles() {
