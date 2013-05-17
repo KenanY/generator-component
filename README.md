@@ -78,12 +78,11 @@ $ yo component
 
 ## Release notes
 
-### 1.1.0
+### 1.2.0
 
-- `name` fields in `package.json` and `component.json` are now automatically filled in
-- Prevent Yeoman's default behavior of executing `bower install`
-- Scaffold `README.md`
-- Quotes now surround node versions in `.travis.yml`
-- `--skip-install` flag
+- Test scaffolding
+- Exclude `package.json` if component won't go on npm
+- Update yeoman-generator to v0.11
+- Generate `.travis.yml`
 
 See previous releases [here](https://github.com/KenanY/generator-component/wiki/Changelog)
