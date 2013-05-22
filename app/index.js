@@ -35,34 +35,44 @@ ComponentGenerator.prototype.askFor = function askFor() {
   console.log(welcome);
 
   var prompts = [{
-    name: 'componentFullName',
-    message: 'What would you like to call this component?',
-    default: 'myComponent',
-    warning: 'You can change the component name.'
+    name: 'componentRepo',
+    message: 'repo:',
+    default: 'username/project'
   },
   {
     name: 'componentDescription',
-    message: 'How would you like to describe this component?',
-    default: 'My component',
-    warning: 'You can change the component description.'
+    message: 'description:',
+    default: 'A component.'
+  },
+  {
+    name: 'componentHasJS',
+    message: 'Does this component have JS?',
+    default: 'Y/n'
+  },
+  {
+    name: 'componentHasCSS',
+    message: 'Does this component have CSS?',
+    default: 'Y/n'
+  },
+  {
+    name: 'componentHasHTML',
+    message: 'Does this component have HTML?',
+    default: 'Y/n'
   },
   {
     name: 'testScaffolding',
     message: 'Would you like tests?',
-    default: 'Y/n',
-    warning: 'Yes: A package.json file and a folder for tests will be created.'
+    default: 'Y/n'
   },
   {
     name: 'editorConfig',
     message: 'Would you like an .editorconfig file?',
-    default: 'Y/n',
-    warning: 'Yes: An .editorconfig will will be created.'
+    default: 'Y/n'
   },
   {
     name: 'npmPublishing',
-    message: 'Would you like to publish this module to npm?',
-    default: 'Y/n',
-    warning: 'Yes: A package.json will be created.'
+    message: 'Would you like to publish this component to npm?',
+    default: 'Y/n'
   }];
 
   this.prompt(prompts, function(err, props) {
@@ -70,7 +80,12 @@ ComponentGenerator.prototype.askFor = function askFor() {
       return this.emit('error', err);
     }
 
-    this.componentFullName = props.componentFullName;
+    var repo = this.componentRepo.split('/');
+    if (repo.length != 2) throw new Error('repo must be <username>/<project>');
+
+    var name = repo[1];
+
+    this.componentRepo = props.componentFullName;
     this.componentDescription = props.componentDescription;
     this.testScaffolding = (/y/i).test(props.testScaffolding);
     this.editorConfig = (/y/i).test(props.editorConfig);
