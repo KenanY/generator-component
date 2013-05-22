@@ -10,14 +10,14 @@ describe('generator-component', function() {
       }
 
       this.app = helpers.createGenerator('component:app', [
-        '../../app'
+        '../../lib'
       ]);
       done();
     }.bind(this));
   });
 
   it('can be imported', function() {
-    var importApp = require('../app');
+    var importApp = require('../lib');
     assert(importApp !== undefined);
   });
 
