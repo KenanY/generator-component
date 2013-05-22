@@ -26,15 +26,14 @@ describe('generator-component', function() {
       '.gitattributes',
       '.gitignore',
       'HISTORY.md',
-      ['component.json', /"name": "temp"/],
-      'index.js',
+      ['component.json', /"name": "tester"/],
       'README.md'
     ];
 
     helpers.mockPrompt(this.app, {
       'componentRepo': 'KenanY/tester',
       'componentDescription': 'Component for testing.',
-      'componentHasJS': 'Y',
+      'componentHasJS': 'N',
       'componentHasCSS': 'N',
       'componentHasHTML': 'N',
       'testScaffolding': 'N',
@@ -57,9 +56,9 @@ describe('generator-component', function() {
       '.gitignore',
       '.travis.yml',
       'HISTORY.md',
-      ['component.json', /"name": "temp"/],
+      ['component.json', /"name": "tester"/],
       'index.js',
-      ['package.json', /"name": "temp"/],
+      ['package.json', /"name": "tester"/],
       'README.md'
     ];
 

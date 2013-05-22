@@ -1,6 +1,6 @@
-# <%= _.slugify(appname) %>
+# <%= componentName %>
 
-A component.
+<%= componentDescription %>
 
 ## API
 
