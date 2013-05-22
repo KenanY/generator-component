@@ -9,7 +9,7 @@ describe('generator-component', function() {
         return done(err);
       }
 
-      this.app = helpers.createGenerator('component:app', [
+      this.app = helpers.createGenerator('component:lib', [
         '../../lib'
       ]);
       done();
@@ -32,8 +32,11 @@ describe('generator-component', function() {
     ];
 
     helpers.mockPrompt(this.app, {
-      'componentFullName': 'tester',
+      'componentRepo': 'KenanY/tester',
       'componentDescription': 'Component for testing.',
+      'componentHasJS': 'Y',
+      'componentHasCSS': 'N',
+      'componentHasHTML': 'N',
       'testScaffolding': 'N',
       'editorConfig': 'N',
       'npmPublishing': 'N'
@@ -61,8 +64,11 @@ describe('generator-component', function() {
     ];
 
     helpers.mockPrompt(this.app, {
-      'componentFullName': 'tester',
+      'componentRepo': 'KenanY/tester',
       'componentDescription': 'Component for testing.',
+      'componentHasJS': 'Y',
+      'componentHasCSS': 'Y',
+      'componentHasHTML': 'Y',
       'testScaffolding': 'Y',
       'editorConfig': 'Y',
       'npmPublishing': 'Y'
