@@ -25,13 +25,12 @@ $ yo component
   </tr>
 </table>
 
-## Release notes
+## Release Notes
 
-### 1.2.0
+### 1.3.0
 
-- Test scaffolding
-- Exclude `package.json` if component won't go on npm
-- Update yeoman-generator to v0.11
-- Generate `.travis.yml`
+- Do not slugify every instance of the component's name
+- Ask for repo (`KenanY/gcd`) instead of just a name (`gcd`)
+- Initial support for HTML and CSS generation
 
 See previous releases [here](https://github.com/KenanY/generator-component/wiki/Changelog)
