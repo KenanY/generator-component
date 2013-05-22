@@ -8,8 +8,7 @@ An opinionated Yeoman generator for [components](https://github.com/component).
 ## Getting started
 
 ``` bash
-$ npm install yo -g
-$ npm install generator-component
+$ npm install yo generator-component -g
 $ yo component
 ```
 
