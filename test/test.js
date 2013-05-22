@@ -4,20 +4,20 @@ var helpers = require('yeoman-generator').test;
 
 describe('generator-component', function() {
   beforeEach(function(done) {
-    helpers.testDirectory(path.join(__dirname, 'temp'), function(err) {
+    helpers.testDirectory(path.join(__dirname, './temp'), function(err) {
       if (err) {
         return done(err);
       }
 
-      this.app = helpers.createGenerator('component:lib', [
-        '../../lib'
+      this.app = helpers.createGenerator('component:app', [
+        '../../lib/generators/app'
       ]);
       done();
     }.bind(this));
   });
 
   it('can be imported', function() {
-    var importApp = require('../lib');
+    var importApp = require('../lib/generators/app');
     assert(importApp !== undefined);
   });
 

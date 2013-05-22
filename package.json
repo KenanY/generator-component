@@ -12,7 +12,7 @@
     "email": "kenan@kenany.me",
     "url": "http://kenany.me"
   },
-  "main": "lib/index.js",
+  "main": "lib/generators/app/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/KenanY/generator-component.git"
