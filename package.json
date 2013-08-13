@@ -13,10 +13,7 @@
     "url": "http://kenany.me"
   },
   "main": "lib/generators/app/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/KenanY/generator-component.git"
-  },
+  "repository": "https://github.com/KenanY/generator-component.git",
   "scripts": {
     "test": "mocha -R spec"
   },
