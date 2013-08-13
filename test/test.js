@@ -1,5 +1,5 @@
-var path    = require('path');
-var assert  = require('assert');
+var path = require('path');
+var assert = require('assert');
 var helpers = require('yeoman-generator').test;
 
 describe('generator-component', function() {
