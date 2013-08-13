@@ -4,9 +4,9 @@ var helpers = require('yeoman-generator').test;
 
 describe('generator-component', function() {
   beforeEach(function(done) {
-    helpers.testDirectory(path.join(__dirname, './temp'), function(err) {
-      if (err) {
-        return done(err);
+    helpers.testDirectory(path.join(__dirname, './temp'), function(error) {
+      if (error) {
+        return done(error);
       }
 
       this.app = helpers.createGenerator('component:app', [
